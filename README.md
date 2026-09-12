@@ -20,23 +20,20 @@ Traditional digital wellbeing applications rely on static timers or easily circu
 
 The architecture operates entirely on-device to preserve privacy and minimize latency, using a two-stage hierarchical model:
 
-[ Touch & Motion Stream ] ──> [ Feature Extraction (16 Features) ]
-│
-▼
-[ Stage 1: Random Forest Classifier ]
-│
-┌──────────────────────┴──────────────────────┐
-▼                                             ▼
-[ Adult Detected ]                            [ Child Detected ]
-(System Dormant)                                      │
-▼
-[ Stage 2: 6D Biometric Matrix ]
-(Curvature + Gyroscopic Tilt)
-│
-▼
-[ Decoupled Kinematic JITAI ]
-(Z-Score Engine & Integrity Timer)
-
+```mermaid
+graph TD
+    A[Touch & Motion Stream] --> B[Feature Extraction Layer<br/>16 Features: Touch + Accel + Gyro]
+    B --> C[Stage 1: Random Forest Classifier<br/>Age Demographics Detection]
+    
+    C -->|Adult Detected| D[Adult Profile<br/>System Dormant]
+    C -->|Child Detected| E[Stage 2: Child Identity Verification<br/>6D Weighted Euclidean Distance]
+    
+    E -->|Identity Confirmed| F[Decoupled Kinematic JITAI Engine<br/>Personalized Z-Score Tracking]
+    E -->|Identity Unverified| G[Access Denied / Re-Authentication]
+    
+    F --> H[Adaptive Intervention Engine<br/>5-Strike Counter & 15s Integrity Timer]
+    H --> I[Distraction-Free Break Mode<br/>Cognitive Micro-Games & Gamified Avatars]
+```
 ---
 
 ## 🔬 Core Engineering Innovations
