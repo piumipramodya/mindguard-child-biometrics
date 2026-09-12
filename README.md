@@ -15,7 +15,13 @@
 Traditional digital wellbeing applications rely on static timers or easily circumvented PINs that fail on shared family devices. **MindGuard** is a novel, on-device Edge AI framework combining **Touch Biometrics**, **Inertial Sensor Fusion**, and **Just-In-Time Adaptive Interventions (JITAI)** to passively verify individual child profiles (ages 3–12) and mitigate compulsive social media overuse.
 
 ---
+## 🎥 System Demonstration
 
+Watch the live demonstration of the MindGuard AI monitoring, JITAI trigger, and gamified Break Mode in action:
+
+[![MindGuard Demo](https://img.youtube.com/vi/l_G8SUV_da0/0.jpg)](https://www.youtube.com/watch?v=l_G8SUV_da0)
+
+---
 ## 🏛️ System Architecture
 
 The architecture operates entirely on-device to preserve privacy and minimize latency, using a two-stage hierarchical model:
